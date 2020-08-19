@@ -28,13 +28,11 @@ translator_rate_without_spaces = round(translator_page_count_without_spaces * ra
 
 # Count the number of words and translator pages and the translation rate.
 word_count = len(source_text_with_spaces.split())
-words_per_page_with_spaces = round(word_count / translator_page_count_with_spaces, 2)
-words_per_page_without_spaces = round(word_count / translator_page_count_without_spaces, 2)
 
 # Display everything in a table.
 table = PrettyTable(["Translation Info", "With spaces", "Without spaces"])
 table.add_row(["Characters", character_count_with_spaces, character_count_without_spaces])
-table.add_row(["Words", words_per_page_with_spaces, words_per_page_without_spaces])
+table.add_row(["Words", word_count, word_count])
 table.add_row(["Translator pages", translator_page_count_with_spaces, translator_page_count_without_spaces])
 table.add_row(["Translator rate in " + currency, translator_rate_with_spaces, translator_rate_without_spaces])
 print(table)
